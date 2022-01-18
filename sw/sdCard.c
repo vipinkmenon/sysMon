@@ -80,7 +80,7 @@ FIL* openFile(char *FileName,char mode){
 			rc = f_open(&fil, (char *)FileName, FA_CREATE_NEW | FA_WRITE); //f_open
 		}
 		else
-			rc = f_lseek(&fil,fil.fsize);
+			rc = f_lseek(&fil, fil.obj.objsize);
 	}
 	if (rc) {
 		xil_printf(" ERROR : f_open returned %d\r\n", rc);
